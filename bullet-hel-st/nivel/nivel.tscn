@@ -3,9 +3,16 @@
 [ext_resource type="PackedScene" uid="uid://bry5uox8pcr68" path="res://jugador/jugador.tscn" id="1_rocb4"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mo1yv"]
+size = Vector2(1280, 1)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0thrb"]
-size = Vector2(1145, 89.5625)
+size = Vector2(1280, 1.0000124)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rocb4"]
+size = Vector2(720, 1)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kvd15"]
+size = Vector2(720, 0.99996907)
 
 [node name="nivel" type="Node2D" unique_id=1153102744]
 
@@ -15,19 +22,19 @@ position = Vector2(255, 233)
 [node name="paredes" type="StaticBody2D" parent="." unique_id=865198425]
 
 [node name="arriba" type="CollisionShape2D" parent="paredes" unique_id=1322723452]
-position = Vector2(638, 10)
+position = Vector2(640, 0.5)
 shape = SubResource("RectangleShape2D_mo1yv")
 
 [node name="abajo" type="CollisionShape2D" parent="paredes" unique_id=1378531993]
-position = Vector2(640, 719.5625)
+position = Vector2(640, 719.5)
 shape = SubResource("RectangleShape2D_0thrb")
 
-[node name="abajo2" type="CollisionShape2D" parent="paredes" unique_id=468533067]
-position = Vector2(1325.2188, 399.5)
+[node name="derecha" type="CollisionShape2D" parent="paredes" unique_id=468533067]
+position = Vector2(1279.5, 360)
 rotation = 1.5707964
-shape = SubResource("RectangleShape2D_0thrb")
+shape = SubResource("RectangleShape2D_rocb4")
 
-[node name="abajo3" type="CollisionShape2D" parent="paredes" unique_id=1483457444]
-position = Vector2(0, 360)
+[node name="izquierda" type="CollisionShape2D" parent="paredes" unique_id=1483457444]
+position = Vector2(0.49999973, 360)
 rotation = 1.5707964
-shape = SubResource("RectangleShape2D_0thrb")
+shape = SubResource("RectangleShape2D_kvd15")

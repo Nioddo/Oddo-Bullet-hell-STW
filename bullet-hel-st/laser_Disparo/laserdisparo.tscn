@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://bu3371ox6htce"]
+
+[ext_resource type="Script" uid="uid://s25euj6caq3v" path="res://laserdisparo.gd" id="1_gfr4g"]
+[ext_resource type="Texture2D" uid="uid://byedoknnqruxj" path="res://assets/green_laser.png" id="2_bc22i"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bc22i"]
+size = Vector2(8, 2)
+
+[node name="laserdisparo" type="Area2D" unique_id=1546035301]
+script = ExtResource("1_gfr4g")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=544802768]
+position = Vector2(4, 1)
+shape = SubResource("RectangleShape2D_bc22i")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=592315533]
+position = Vector2(4, 1)
+scale = Vector2(0.019002374, 0.025974026)
+texture = ExtResource("2_bc22i")

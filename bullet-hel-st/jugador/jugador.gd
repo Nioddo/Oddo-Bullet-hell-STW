@@ -1,22 +1,33 @@
 extends CharacterBody2D
-
-var velocidad = 400
-
+class_name Jugador
+	
+var _velocidad:float = 400.0
+	
+var _escena_laser = preload("res://laser_Disparo/laserdisparo.tscn")
+	
 func _physics_process(delta):
-	var direccion_x = 0
-	var direccion_y = 0
-	
-	if Input.is_action_pressed("ui_right"):
-		direccion_x = 1
-	if Input.is_action_pressed("ui_left"):
-		direccion_x = -1
+			
+	var direccion_x = Input.get_axis("ui_left", "ui_right")
+	var direccion_y = Input.get_axis("ui_up", "ui_down")
 		
-	if Input.is_action_pressed("ui_down"):
-		direccion_y = 1
-	if Input.is_action_pressed("ui_up"):
-		direccion_y = -1
+	velocity.x = direccion_x * _velocidad
+	velocity.y = direccion_y * _velocidad
 		
-	velocity.x = direccion_x * velocidad
-	velocity.y = direccion_y * velocidad
-	
 	move_and_slide()
+		
+	if Input.is_action_just_pressed("ui_accept"):
+		_disparar()
+		
+func _disparar():
+		
+	var laser_1 = _escena_laser.instantiate()
+		
+	laser_1.global_position = $disparo.global_position 
+	get_parent().add_child(laser_1)
+		
+			
+	var laser_2 = _escena_laser.instantiate()
+			
+	laser_2.global_position = $disparo2.global_position 
+	get_parent().add_child(laser_2)
+			
