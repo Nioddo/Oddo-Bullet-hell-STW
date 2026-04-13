@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://cn0ug7beho2d7"]
 
 [ext_resource type="PackedScene" uid="uid://bry5uox8pcr68" path="res://jugador/jugador.tscn" id="1_rocb4"]
+[ext_resource type="PackedScene" uid="uid://d0wu2p1a74dge" path="res://estrella_muerte/jefe.tscn" id="2_mo1yv"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mo1yv"]
 size = Vector2(1280, 1)
@@ -16,8 +17,11 @@ size = Vector2(720, 0.99996907)
 
 [node name="nivel" type="Node2D" unique_id=1153102744]
 
+[node name="jefe" parent="." unique_id=1783472467 instance=ExtResource("2_mo1yv")]
+position = Vector2(14, -13)
+
 [node name="jugador" parent="." unique_id=1895115745 instance=ExtResource("1_rocb4")]
-position = Vector2(255, 233)
+position = Vector2(234, 211)
 
 [node name="paredes" type="StaticBody2D" parent="." unique_id=865198425]
 

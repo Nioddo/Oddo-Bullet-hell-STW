@@ -1,28 +1,27 @@
 [gd_scene format=3 uid="uid://bry5uox8pcr68"]
 
 [ext_resource type="Script" uid="uid://dyx11ghvkslhb" path="res://jugador/jugador.gd" id="1_y3xgi"]
-
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_y3xgi"]
-load_path = "res://.godot/imported/Diseño sin título (1).png-08f3c5269533a668aaf323d2f4eafc81.ctex"
+[ext_resource type="Texture2D" uid="uid://2umygwqtr6g1" path="res://assets/space_ship.png" id="2_5vouv"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5vouv"]
-size = Vector2(32, 32.5)
+size = Vector2(60, 65)
 
 [node name="jugador" type="CharacterBody2D" unique_id=1895115745]
+position = Vector2(3, 27)
 script = ExtResource("1_y3xgi")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1791046014]
-position = Vector2(19.000002, 24.000002)
+position = Vector2(96.73653, 91.09421)
 rotation = 1.5707964
-scale = Vector2(0.012296296, 0.012902941)
-texture = SubResource("CompressedTexture2D_y3xgi")
+scale = Vector2(0.025418095, 0.026118528)
+texture = ExtResource("2_5vouv")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1305549003]
-position = Vector2(24, 24.25)
+position = Vector2(109, 91.5)
 shape = SubResource("RectangleShape2D_5vouv")
 
 [node name="disparo" type="Marker2D" parent="." unique_id=689302090]
-position = Vector2(28, 39)
+position = Vector2(112, 61)
 
 [node name="disparo2" type="Marker2D" parent="." unique_id=96502020]
-position = Vector2(28, 9)
+position = Vector2(112, 122)

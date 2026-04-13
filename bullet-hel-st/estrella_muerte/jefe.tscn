@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://d0wu2p1a74dge"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_exrnk"]
+load_path = "res://.godot/imported/death_star.png-93c600f01d6d799568e84a7aa3da7102.ctex"
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_xa7xf"]
+radius = 155.08063
+
+[node name="jefe" type="Area2D" unique_id=1783472467]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=574665822]
+position = Vector2(1154.5, 354.89066)
+scale = Vector2(0.10518519, 0.108978726)
+texture = SubResource("CompressedTexture2D_exrnk")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1606166370]
+position = Vector2(1155, 369)
+shape = SubResource("CircleShape2D_xa7xf")
