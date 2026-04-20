@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://bvfw2tp6iccly"]
+
+[ext_resource type="Texture2D" uid="uid://ugru5lu01s4u" path="res://assets/red_laser.png" id="1_bgj30"]
+
+[node name="laser_tropa" type="Area2D" unique_id=120074657]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1751676690]
+texture = ExtResource("1_bgj30")

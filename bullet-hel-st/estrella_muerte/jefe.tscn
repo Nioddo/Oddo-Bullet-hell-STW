@@ -9,10 +9,9 @@ radius = 155.08063
 [node name="jefe" type="Area2D" unique_id=1783472467]
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=574665822]
-position = Vector2(1154.5, 354.89066)
 scale = Vector2(0.10518519, 0.108978726)
 texture = SubResource("CompressedTexture2D_exrnk")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1606166370]
-position = Vector2(1155, 369)
+position = Vector2(0, 13)
 shape = SubResource("CircleShape2D_xa7xf")

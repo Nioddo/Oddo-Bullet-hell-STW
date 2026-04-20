@@ -3,6 +3,7 @@ class_name Jugador
 	
 var _velocidad:float = 400.0
 	
+var _vida:int = 3
 var _escena_laser = preload("res://laser_Disparo/laserdisparo.tscn")
 	
 func _physics_process(delta):
@@ -30,4 +31,12 @@ func _disparar():
 			
 	laser_2.global_position = $disparo2.global_position 
 	get_parent().add_child(laser_2)
-			
+				
+func _recibir_danio(cantidad:int):	
+	_vida -= cantidad			
+	print("Vida restante: ", _vida)		
+					
+	if _vida <= 0:		
+		print("¡Nave destruida! Game Over.")
+		queue_free() 		
+				
