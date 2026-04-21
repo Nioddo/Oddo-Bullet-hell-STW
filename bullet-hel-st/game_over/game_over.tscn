@@ -1,0 +1,37 @@
+[gd_scene format=3 uid="uid://c0abnkve8w2bv"]
+
+[ext_resource type="Script" uid="uid://cpdeqvwhjbi7u" path="res://game_over/game_over.gd" id="1_eaxdo"]
+
+[node name="game_over" type="Control" unique_id=2142700371]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_eaxdo")
+
+[node name="Label" type="Label" parent="." unique_id=321393485]
+custom_minimum_size = Vector2(30, 0)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 447.0
+offset_top = 333.0
+offset_right = 809.0
+offset_bottom = 389.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_font_sizes/font_size = 100
+text = "GAME OVER"
+
+[node name="Button" type="Button" parent="." unique_id=88633417]
+layout_mode = 0
+offset_left = 494.0
+offset_top = 442.0
+offset_right = 805.0
+offset_bottom = 519.0
+theme_override_font_sizes/font_size = 50
+text = "REINTENTAR"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

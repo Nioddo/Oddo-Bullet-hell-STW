@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Bullet hel St"
-run/main_scene="uid://cn0ug7beho2d7"
+run/main_scene="uid://co5oxo564y1sv"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
 

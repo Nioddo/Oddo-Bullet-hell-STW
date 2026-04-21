@@ -1,7 +1,7 @@
 extends Area2D
 class_name LaserTropa
 	
-var _velocidad:float = 420.0 
+var _velocidad:float = 700.0 
 var direccion:Vector2 = Vector2(-1, 0) 
 			
 func _process(delta):	

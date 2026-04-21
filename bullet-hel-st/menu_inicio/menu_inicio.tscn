@@ -1,0 +1,35 @@
+[gd_scene format=3 uid="uid://co5oxo564y1sv"]
+
+[ext_resource type="Script" uid="uid://bts1bsynunjvk" path="res://menu_inicio/menu_inicio.gd" id="1_emvks"]
+
+[node name="menu_inicio" type="Control" unique_id=679366798]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_emvks")
+
+[node name="Button" type="Button" parent="." unique_id=503564377]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.083000004
+anchor_bottom = 0.115
+offset_left = 528.0
+offset_top = 334.0
+offset_right = 612.76
+offset_bottom = 339.2
+theme_override_font_sizes/font_size = 50
+text = "JUGAR"
+
+[node name="Label" type="Label" parent="." unique_id=1333095419]
+layout_mode = 0
+offset_left = 213.0
+offset_top = 228.0
+offset_right = 1094.0
+offset_bottom = 324.0
+theme_override_font_sizes/font_size = 70
+text = "STAR WARS - BULLET HELL"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

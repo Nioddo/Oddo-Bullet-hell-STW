@@ -20,6 +20,6 @@ shape = SubResource("RectangleShape2D_m4lg5")
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=2037309633]
 
 [node name="Timer" type="Timer" parent="." unique_id=1450339140]
-wait_time = 1.2
+wait_time = 1.5
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

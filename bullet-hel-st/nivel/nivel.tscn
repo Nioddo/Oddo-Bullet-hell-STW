@@ -2,6 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://bry5uox8pcr68" path="res://jugador/jugador.tscn" id="1_rocb4"]
 [ext_resource type="PackedScene" uid="uid://d0wu2p1a74dge" path="res://estrella_muerte/jefe.tscn" id="2_mo1yv"]
+[ext_resource type="Script" uid="uid://ngyfp0t0ich8" path="res://nivel/vida.gd" id="3_0thrb"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mo1yv"]
 size = Vector2(1280, 1)
@@ -42,3 +43,42 @@ shape = SubResource("RectangleShape2D_rocb4")
 position = Vector2(0.49999973, 360)
 rotation = 1.5707964
 shape = SubResource("RectangleShape2D_kvd15")
+
+[node name="vida" type="HBoxContainer" parent="paredes" unique_id=1996135285]
+offset_left = 21.0
+offset_top = 13.0
+offset_right = 61.0
+offset_bottom = 53.0
+script = ExtResource("3_0thrb")
+
+[node name="ColorRect" type="ColorRect" parent="paredes/vida" unique_id=1680577574]
+custom_minimum_size = Vector2(10, 10)
+layout_mode = 2
+color = Color(1, 0.06666667, 0.1764706, 1)
+
+[node name="ColorRect2" type="ColorRect" parent="paredes/vida" unique_id=382844876]
+custom_minimum_size = Vector2(10, 10)
+layout_mode = 2
+color = Color(1, 0.06666667, 0.1764706, 1)
+
+[node name="ColorRect3" type="ColorRect" parent="paredes/vida" unique_id=517592382]
+custom_minimum_size = Vector2(10, 10)
+layout_mode = 2
+color = Color(1, 0.06666667, 0.1764706, 1)
+
+[node name="ColorRect4" type="ColorRect" parent="paredes/vida" unique_id=79976572]
+custom_minimum_size = Vector2(10, 10)
+layout_mode = 2
+color = Color(1, 0.06666667, 0.1764706, 1)
+
+[node name="ColorRect5" type="ColorRect" parent="paredes/vida" unique_id=559463134]
+custom_minimum_size = Vector2(10, 10)
+layout_mode = 2
+color = Color(1, 0.06666667, 0.1764706, 1)
+
+[node name="ColorRect6" type="ColorRect" parent="paredes/vida" unique_id=1302543888]
+custom_minimum_size = Vector2(10, 10)
+layout_mode = 2
+color = Color(1, 0.06666667, 0.1764706, 1)
+
+[connection signal="vida_cambiada" from="jugador" to="paredes/vida" method="actualizar_corazones"]
