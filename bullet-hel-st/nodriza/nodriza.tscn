@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://bawcfw2mv47j7"]
+
+[ext_resource type="Script" uid="uid://n1rr3pqqvtdm" path="res://nodriza/nodriza.gd" id="1_b2nsc"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pobxg"]
+size = Vector2(61, 27)
+
+[node name="nodriza" type="Area2D" unique_id=97487102]
+script = ExtResource("1_b2nsc")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=769864301]
+scale = Vector2(30, 30)
+
+[node name="Timer" type="Timer" parent="." unique_id=93214821]
+wait_time = 0.52
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1575233063]
+offset_right = 61.0
+offset_bottom = 27.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ColorRect" unique_id=1415241196]
+position = Vector2(30.5, 13.5)
+shape = SubResource("RectangleShape2D_pobxg")
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

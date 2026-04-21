@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://c2lufe3d8lh16"]
+
+[ext_resource type="Texture2D" uid="uid://ueff8lvpviv" path="res://assets/blue_laser.png" id="1_3bk3u"]
+[ext_resource type="Script" uid="uid://cj8m066qrm3fr" path="res://disparoguiado/disparoguido.gd" id="1_avrtp"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_avrtp"]
+size = Vector2(28.75, 3)
+
+[node name="disparoguido" type="Area2D" unique_id=1857334376]
+script = ExtResource("1_avrtp")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1289118592]
+scale = Vector2(0.07957245, 0.10526316)
+texture = ExtResource("1_3bk3u")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=417089888]
+position = Vector2(0.625, 0)
+shape = SubResource("RectangleShape2D_avrtp")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
