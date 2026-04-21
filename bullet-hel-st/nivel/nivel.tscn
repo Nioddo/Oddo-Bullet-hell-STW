@@ -2,7 +2,6 @@
 
 [ext_resource type="PackedScene" uid="uid://bry5uox8pcr68" path="res://jugador/jugador.tscn" id="1_rocb4"]
 [ext_resource type="PackedScene" uid="uid://d0wu2p1a74dge" path="res://estrella_muerte/jefe.tscn" id="2_mo1yv"]
-[ext_resource type="PackedScene" uid="uid://buji5rh67oqm4" path="res://tropa/tropa.tscn" id="3_0thrb"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mo1yv"]
 size = Vector2(1280, 1)
@@ -43,9 +42,3 @@ shape = SubResource("RectangleShape2D_rocb4")
 position = Vector2(0.49999973, 360)
 rotation = 1.5707964
 shape = SubResource("RectangleShape2D_kvd15")
-
-[node name="tropa" parent="." unique_id=1933184902 instance=ExtResource("3_0thrb")]
-position = Vector2(477, 7)
-
-[node name="tropa2" parent="." unique_id=569085302 instance=ExtResource("3_0thrb")]
-position = Vector2(475, 211)

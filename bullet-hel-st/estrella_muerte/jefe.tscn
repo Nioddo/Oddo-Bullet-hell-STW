@@ -1,5 +1,7 @@
 [gd_scene format=3 uid="uid://d0wu2p1a74dge"]
 
+[ext_resource type="Script" uid="uid://dyrog8385h38n" path="res://estrella_muerte/jefe.gd" id="1_xa7xf"]
+
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_exrnk"]
 load_path = "res://.godot/imported/death_star.png-93c600f01d6d799568e84a7aa3da7102.ctex"
 
@@ -7,6 +9,7 @@ load_path = "res://.godot/imported/death_star.png-93c600f01d6d799568e84a7aa3da71
 radius = 155.08063
 
 [node name="jefe" type="Area2D" unique_id=1783472467]
+script = ExtResource("1_xa7xf")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=574665822]
 scale = Vector2(0.10518519, 0.108978726)
@@ -15,3 +18,10 @@ texture = SubResource("CompressedTexture2D_exrnk")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1606166370]
 position = Vector2(0, 13)
 shape = SubResource("CircleShape2D_xa7xf")
+
+[node name="Timer" type="Timer" parent="." unique_id=298729095]
+autostart = true
+
+[node name="spawn" type="Marker2D" parent="." unique_id=906769134]
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

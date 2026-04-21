@@ -1,8 +1,19 @@
 [gd_scene format=3 uid="uid://bvfw2tp6iccly"]
 
+[ext_resource type="Script" uid="uid://c6ni6ihnim47j" path="res://laser_tropa/laser_tropa.gd" id="1_ber26"]
 [ext_resource type="Texture2D" uid="uid://ugru5lu01s4u" path="res://assets/red_laser.png" id="1_bgj30"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bgj30"]
+size = Vector2(16, 1.5)
+
 [node name="laser_tropa" type="Area2D" unique_id=120074657]
+script = ExtResource("1_ber26")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1751676690]
+scale = Vector2(0.045, 0.045)
 texture = ExtResource("1_bgj30")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=294076245]
+shape = SubResource("RectangleShape2D_bgj30")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

@@ -4,24 +4,26 @@
 [ext_resource type="Texture2D" uid="uid://2umygwqtr6g1" path="res://assets/space_ship.png" id="2_5vouv"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5vouv"]
-size = Vector2(60, 65)
+size = Vector2(60, 66.5)
 
 [node name="jugador" type="CharacterBody2D" unique_id=1895115745]
-position = Vector2(3, 27)
 script = ExtResource("1_y3xgi")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1791046014]
-position = Vector2(96.73653, 91.09421)
 rotation = 1.5707964
 scale = Vector2(0.025418095, 0.026118528)
 texture = ExtResource("2_5vouv")
+metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1305549003]
-position = Vector2(109, 91.5)
+position = Vector2(9, 0.75)
 shape = SubResource("RectangleShape2D_5vouv")
+metadata/_edit_group_ = true
 
 [node name="disparo" type="Marker2D" parent="." unique_id=689302090]
-position = Vector2(112, 61)
+position = Vector2(16, 31)
+metadata/_edit_group_ = true
 
 [node name="disparo2" type="Marker2D" parent="." unique_id=96502020]
-position = Vector2(112, 122)
+position = Vector2(16, -30)
+metadata/_edit_group_ = true

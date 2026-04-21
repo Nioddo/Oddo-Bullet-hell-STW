@@ -1,6 +1,6 @@
-extends Area2D
-class_name Laser
-		
+extends Area2D	
+class_name Laser	
+			
 var _velocidad:float = 600.0
 		
 func _process(delta):		
@@ -9,7 +9,9 @@ func _process(delta):
 		queue_free()	
 			
 func _on_area_entered(area):
-			
+					
 	if area.has_method("_recibir_danio"):	
 		area._recibir_danio(1) 		
 		queue_free() 	
+	
+		
