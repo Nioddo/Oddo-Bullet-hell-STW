@@ -1,7 +1,7 @@
 extends Area2D
 class_name MisilGuiado
 			
-var _velocidad:float = 200.0
+var _velocidad:float = 180.0
 var _tiempo_vida:float = 20.0
 			
 func _process(delta):		
