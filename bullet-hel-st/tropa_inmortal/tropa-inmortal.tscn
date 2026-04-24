@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://wge5pf13dp6p"]
+
+[ext_resource type="Script" uid="uid://cp2xtu0rmbr6n" path="res://tropa_inmortal/tropa-inmortal.gd" id="1_lv425"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_m4lg5"]
+size = Vector2(40, 40)
+
+[node name="tropa" type="Area2D" unique_id=1933184902]
+script = ExtResource("1_lv425")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=529052813]
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1336294867]
+shape = SubResource("RectangleShape2D_m4lg5")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=2037309633]
+
+[node name="Timer" type="Timer" parent="." unique_id=1450339140]
+wait_time = 1.5
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

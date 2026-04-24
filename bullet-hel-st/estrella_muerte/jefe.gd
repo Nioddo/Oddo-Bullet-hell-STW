@@ -4,8 +4,10 @@ class_name Jefe
 var _escena_tropa = preload("res://tropa/tropa.tscn")
 var _escena_nodriza = preload("res://nodriza/nodriza.tscn")
 var _escena_laser_jefe = preload("res://laser_estrella_muerte/laser_estrella_muerte.tscn")
+var _escena_nave_inmortal = preload("res://tropa_inmortal/tropa-inmortal.tscn")
 		
 			
+var _inmortal_creada:bool = false			
 var _fase_actual:int = 1
 var _formacion_creada:bool = false			
 var _enemigos_activos:int = 0		
@@ -16,8 +18,10 @@ var _tiempo_sobrevivido:int = 0
 func _on_timer_timeout():
 	if _fase_actual == 1:
 		_gestionar_fase_uno()
+					
 	elif _fase_actual == 2:
 		_gestionar_fase_dos()
+				
 	elif _fase_actual == 3:
 		_gestionar_fase_tres()
 				
@@ -84,6 +88,11 @@ func _on_enemigo_destruido():
 	_enemigos_activos -= 1		
 				
 func _gestionar_fase_tres():
+	if not _inmortal_creada:
+		_crear_nave_inmortal_central()
+		_inmortal_creada = true
+				
+		
 	if $Timer.wait_time > 0.2:
 		$Timer.wait_time = 0.08
 					
@@ -102,5 +111,16 @@ func _gestionar_fase_tres():
 	_rotacion_espiral += 0.25		
 			
 	_tiempo_sobrevivido += 1		
-	if _tiempo_sobrevivido >= 500:		
+	if _tiempo_sobrevivido >= 300:		
 		get_tree().change_scene_to_file("res://nivel_final/nivel_boss.tscn")
+					
+func _crear_nave_inmortal_central():	
+	var nueva_inmortal = _escena_nave_inmortal.instantiate()	
+					
+	nueva_inmortal.global_position = Vector2(1400, 375)	
+	nueva_inmortal.posicion_destino = Vector2(850, 375)	
+					
+	get_parent().add_child(nueva_inmortal)
+					
+							
+								
