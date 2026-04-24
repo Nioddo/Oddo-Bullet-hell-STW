@@ -4,6 +4,9 @@ class_name MisilGuiado
 var _velocidad:float = 180.0
 var _tiempo_vida:float = 20.0
 			
+func _ready():	
+	add_to_group("misiles_nodriza")	
+			
 func _process(delta):		
 	_tiempo_vida -= delta		
 	if _tiempo_vida <= 0:		

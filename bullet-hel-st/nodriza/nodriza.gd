@@ -1,7 +1,7 @@
 extends Area2D
 class_name Nodriza
 
-var vida = 50
+var vida = 1
 var velocidad = 200
 var posicion_destino = Vector2()
 var en_posicion = false
@@ -31,4 +31,5 @@ func _recibir_danio(cantidad):
 	vida -= cantidad		
 	if vida <= 0:		
 		destruida.emit()		
+		get_tree().call_group("misiles_nodriza", "queue_free")
 		queue_free()		

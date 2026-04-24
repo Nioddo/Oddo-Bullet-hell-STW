@@ -3,19 +3,23 @@ class_name Jefe
 	
 var _escena_tropa = preload("res://tropa/tropa.tscn")
 var _escena_nodriza = preload("res://nodriza/nodriza.tscn")
-	
-var _vida:int = 30 
+var _escena_laser_jefe = preload("res://laser_estrella_muerte/laser_estrella_muerte.tscn")
+		
+			
 var _fase_actual:int = 1
 var _formacion_creada:bool = false			
 var _enemigos_activos:int = 0		
 var _nodrizas_creadas:bool = false		
-	
+var _rotacion_espiral:float = 0.0
+var _tiempo_sobrevivido:int = 0
+			
 func _on_timer_timeout():
 	if _fase_actual == 1:
 		_gestionar_fase_uno()
-						
 	elif _fase_actual == 2:
 		_gestionar_fase_dos()
+	elif _fase_actual == 3:
+		_gestionar_fase_tres()
 				
 func _gestionar_fase_uno():
 	if not _formacion_creada:
@@ -63,7 +67,7 @@ func _crear_nodrizas():
 						
 	for i in range(posiciones_destino.size()):	
 		var nueva_nodriza = _escena_nodriza.instantiate()	
-							
+			
 		nueva_nodriza.global_position = Vector2(1400, posiciones_destino[i].y)	
 		nueva_nodriza.posicion_destino = posiciones_destino[i]
 							
@@ -79,9 +83,24 @@ func _crear_nodrizas():
 func _on_enemigo_destruido():	
 	_enemigos_activos -= 1		
 				
-func _recibir_danio(cantidad:int):			
-	if _fase_actual > 2:
-		_vida -= cantidad
-		if _vida <= 0:		
-			queue_free()
-	
+func _gestionar_fase_tres():
+	if $Timer.wait_time > 0.2:
+		$Timer.wait_time = 0.08
+					
+	for i in range(4):
+		var angulo = _rotacion_espiral + (i * (PI / 2.0))	
+		var nuevo_laser = _escena_laser_jefe.instantiate()		
+				
+		nuevo_laser.z_index = -1
+				
+		nuevo_laser.global_position = $spawn.global_position
+		nuevo_laser.direccion = Vector2(cos(angulo), sin(angulo))			
+		nuevo_laser.rotation = angulo	
+						
+		get_parent().add_child(nuevo_laser)		
+					
+	_rotacion_espiral += 0.25		
+			
+	_tiempo_sobrevivido += 1		
+	if _tiempo_sobrevivido >= 500:		
+		get_tree().change_scene_to_file("res://nivel_final/nivel_boss.tscn")

@@ -15,13 +15,13 @@ script = ExtResource("1_xa7xf")
 scale = Vector2(0.10518519, 0.108978726)
 texture = SubResource("CompressedTexture2D_exrnk")
 
+[node name="spawn" type="Marker2D" parent="." unique_id=906769134]
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1606166370]
 position = Vector2(0, 13)
 shape = SubResource("CircleShape2D_xa7xf")
 
 [node name="Timer" type="Timer" parent="." unique_id=298729095]
 autostart = true
-
-[node name="spawn" type="Marker2D" parent="." unique_id=906769134]
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

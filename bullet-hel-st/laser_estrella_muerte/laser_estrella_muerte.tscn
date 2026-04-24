@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://cjel2onenv2g8"]
+
+[ext_resource type="Texture2D" uid="uid://byedoknnqruxj" path="res://assets/green_laser.png" id="1_3tp04"]
+[ext_resource type="Script" uid="uid://d0b412nrkwuqx" path="res://laser_estrella_muerte/laser_estrella_muerte.gd" id="1_h5ycs"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_h5ycs"]
+size = Vector2(424, 44)
+
+[node name="laser_estrellaMuerte" type="Area2D" unique_id=1362846653]
+script = ExtResource("1_h5ycs")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=606426038]
+position = Vector2(0.50000083, 0)
+scale = Vector2(0.16389547, 0.15)
+texture = ExtResource("1_3tp04")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=766443734]
+scale = Vector2(0.15, 0.15)
+shape = SubResource("RectangleShape2D_h5ycs")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

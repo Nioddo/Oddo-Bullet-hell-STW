@@ -5,6 +5,6 @@ func actualizar_corazones(vidas: int):
 	for i in range(corazones.size()):
 		if i < vidas:
 			corazones[i].show()	
-		else:
+		else:	
 			corazones[i].hide()			
 				

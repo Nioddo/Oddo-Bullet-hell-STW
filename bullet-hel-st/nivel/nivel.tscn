@@ -19,7 +19,7 @@ size = Vector2(720, 0.99996907)
 [node name="nivel" type="Node2D" unique_id=1153102744]
 
 [node name="jefe" parent="." unique_id=1783472467 instance=ExtResource("2_mo1yv")]
-position = Vector2(1180, 343)
+position = Vector2(1187, 344)
 
 [node name="jugador" parent="." unique_id=1895115745 instance=ExtResource("1_rocb4")]
 position = Vector2(234, 211)
