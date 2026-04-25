@@ -1,3 +1,52 @@
 [gd_scene format=3 uid="uid://cxu2v5gyvnv31"]
 
+[ext_resource type="PackedScene" uid="uid://buji5rh67oqm4" path="res://tropa/tropa.tscn" id="1_qq4us"]
+[ext_resource type="PackedScene" uid="uid://bawcfw2mv47j7" path="res://nodriza/nodriza.tscn" id="2_gw7ke"]
+[ext_resource type="PackedScene" uid="uid://dd5yr3fgd1ap5" path="res://jugador_final/jugador_final.tscn" id="3_gw7ke"]
+
 [node name="nivel_boss" type="Node2D" unique_id=1413205141]
+
+[node name="tropa" parent="." unique_id=1933184902 instance=ExtResource("1_qq4us")]
+position = Vector2(281, 264)
+
+[node name="tropa2" parent="." unique_id=1363464501 instance=ExtResource("1_qq4us")]
+position = Vector2(503, 244)
+
+[node name="nodriza" parent="." unique_id=97487102 instance=ExtResource("2_gw7ke")]
+position = Vector2(425, 84)
+
+[node name="nodriza2" parent="." unique_id=213644094 instance=ExtResource("2_gw7ke")]
+position = Vector2(264, 119)
+
+[node name="jugador_final" parent="." unique_id=1764430916 instance=ExtResource("3_gw7ke")]
+position = Vector2(667, 321)
+
+[node name="paredIzq" type="StaticBody2D" parent="." unique_id=935264638]
+
+[node name="ColorRect" type="ColorRect" parent="paredIzq" unique_id=1780749807]
+offset_right = 3.0
+offset_bottom = 720.0
+color = Color(0, 0, 0, 1)
+
+[node name="paredDer" type="StaticBody2D" parent="." unique_id=1338093635]
+
+[node name="ColorRect" type="ColorRect" parent="paredDer" unique_id=1926254833]
+offset_left = 1277.0
+offset_right = 1280.0
+offset_bottom = 720.0
+color = Color(0, 0, 0, 1)
+
+[node name="paredArriba" type="StaticBody2D" parent="." unique_id=791239831]
+
+[node name="ColorRect" type="ColorRect" parent="paredArriba" unique_id=1110053899]
+offset_right = 1280.0
+offset_bottom = 3.0
+color = Color(0, 0, 0, 1)
+
+[node name="paredAbajo" type="StaticBody2D" parent="." unique_id=715897314]
+
+[node name="ColorRect" type="ColorRect" parent="paredAbajo" unique_id=2004087995]
+offset_top = 717.0
+offset_right = 1280.0
+offset_bottom = 720.0
+color = Color(0, 0, 0, 1)
