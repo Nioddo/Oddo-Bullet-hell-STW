@@ -8,5 +8,8 @@
 - https://forum.godotengine.org/t/how-to-spawn-enemies-using-vector2-position-stored-in-array-while-digging-map-tiles/17942
 - https://github.com/robyn3choi/godot-tutorial_bullet-hell-pattern-generator
 - https://www.youtube.com/watch?v=Z2TaFnN7cdU
+- https://www.youtube.com/watch?v=CNOAQUdPd_o
+- https://www.youtube.com/watch?v=vVmIYijtikg
+- https://www.youtube.com/watch?v=xWKHxTHvzTI
 # **ASSETS**: 
-
+https://opengameart.org/content/3-lasers
