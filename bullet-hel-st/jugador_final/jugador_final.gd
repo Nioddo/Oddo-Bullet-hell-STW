@@ -14,21 +14,22 @@ func _physics_process(_delta):
 				
 	$pistola.look_at(get_global_mouse_position())	
 			
-	if Input.is_action_pressed("clic_izquierdo") and _puede_disparar:
+	if Input.is_action_pressed("click_izquierdo") and _puede_disparar:
 		_disparar()		
 				
-func _disparar():
+func _disparar():	
 	_puede_disparar = false
 	var laser = _escena_laser.instantiate()	
-			
-	laser.global_position = $pistola/ColorRect.global_position	
+					
+	laser.global_position = $pistola/PuntaArma.global_position	
 	laser.direccion = Vector2(cos($pistola.rotation), sin($pistola.rotation))	
-	laser.rotation = $pistola.rotation	
-	get_parent().add_child(laser)	
-			
+	laser.rotation = $pistola.rotation		
+				
+	get_parent().add_child(laser)		
+					
 	await get_tree().create_timer(0.2).timeout
 	_puede_disparar = true	
-			
+					
 func _recibir_danio(cant):
 	_vida -= cant
 	if _vida <= 0:

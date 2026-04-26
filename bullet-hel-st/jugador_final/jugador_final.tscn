@@ -9,13 +9,14 @@ size = Vector2(12, 24)
 script = ExtResource("1_7iuhm")
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=2075997471]
-offset_right = 12.0
-offset_bottom = 24.0
+offset_left = -6.0
+offset_top = -12.0
+offset_right = 6.0
+offset_bottom = 12.0
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=146608901]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=589787425]
-position = Vector2(6, 12)
 shape = SubResource("RectangleShape2D_7iuhm")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1532901374]
@@ -25,10 +26,10 @@ shape = SubResource("RectangleShape2D_7iuhm")
 [node name="Sprite2D" type="Sprite2D" parent="pistola" unique_id=529909111]
 
 [node name="ColorRect" type="ColorRect" parent="pistola" unique_id=222331504]
-offset_left = -16.0
-offset_top = 11.0
-offset_right = -9.0
-offset_bottom = 13.0
+offset_left = 15.0
+offset_top = -1.0
+offset_right = 22.0
+offset_bottom = 1.0
 
-[node name="Marker2D" type="Marker2D" parent="pistola" unique_id=1857851006]
-position = Vector2(-16, 12)
+[node name="PuntaArma" type="Marker2D" parent="pistola" unique_id=1857851006]
+position = Vector2(22, 0)
