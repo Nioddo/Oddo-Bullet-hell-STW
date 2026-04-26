@@ -3,37 +3,37 @@
 [ext_resource type="Texture2D" uid="uid://ugru5lu01s4u" path="res://assets/red_laser.png" id="1_7jetw"]
 [ext_resource type="Script" uid="uid://bd2ca45s1o3yr" path="res://darth_maul/darth_maul.gd" id="1_mdela"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_mdela"]
-size = Vector2(8, 14.5)
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_okta6"]
-size = Vector2(2423, 27)
+size = Vector2(889, 25.999992)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mdela"]
+size = Vector2(14, 28)
 
 [node name="darth_maul" type="Area2D" unique_id=1034064996]
 script = ExtResource("1_mdela")
-
-[node name="ColorRect" type="ColorRect" parent="." unique_id=1410515256]
-offset_left = -4.0
-offset_top = -7.0
-offset_right = 4.0
-offset_bottom = 7.0
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=810157405]
-shape = SubResource("RectangleShape2D_mdela")
 
 [node name="PivoteEspada" type="Node2D" parent="." unique_id=444200784]
 
 [node name="EspadaHitbox" type="Area2D" parent="PivoteEspada" unique_id=177689593]
 
 [node name="Sprite2D" type="Sprite2D" parent="PivoteEspada/EspadaHitbox" unique_id=374557592]
-position = Vector2(-2.3841858e-07, 0)
-scale = Vector2(6.4299293, 0.078947395)
+position = Vector2(-3.5527137e-15, 0)
+scale = Vector2(2.4513063, 0.07236843)
 texture = ExtResource("1_7jetw")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="PivoteEspada/EspadaHitbox/Sprite2D" unique_id=678030921]
-position = Vector2(1.3997233, -0.5)
-scale = Vector2(0.1555227, 1)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PivoteEspada/EspadaHitbox" unique_id=678030921]
+position = Vector2(0, -2.3841858e-07)
+scale = Vector2(1, 0.078947395)
 shape = SubResource("RectangleShape2D_okta6")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1410515256]
+offset_left = -7.0
+offset_top = -14.0
+offset_right = 7.0
+offset_bottom = 14.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=810157405]
+shape = SubResource("RectangleShape2D_mdela")
 
 [node name="Timer" type="Timer" parent="." unique_id=1841420049]
 wait_time = 4.0

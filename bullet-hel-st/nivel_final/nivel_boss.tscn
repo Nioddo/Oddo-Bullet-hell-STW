@@ -2,6 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://bftis6y17xqxm" path="res://darth_maul/darth_maul.tscn" id="2_qq4us"]
 [ext_resource type="PackedScene" uid="uid://dd5yr3fgd1ap5" path="res://jugador_final/jugador_final.tscn" id="3_gw7ke"]
+[ext_resource type="PackedScene" uid="uid://do4nhsnd7cu8c" path="res://droide_final/droide_final.tscn" id="3_krssi"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1lbhm"]
 size = Vector2(3, 720)
@@ -68,3 +69,15 @@ shape = SubResource("RectangleShape2D_krssi")
 
 [node name="darth_maul" parent="." unique_id=1034064996 instance=ExtResource("2_qq4us")]
 position = Vector2(591, 317)
+
+[node name="droide_final" parent="." unique_id=1131614568 instance=ExtResource("3_krssi")]
+position = Vector2(31, 691)
+
+[node name="droide_final2" parent="." unique_id=2123282686 instance=ExtResource("3_krssi")]
+position = Vector2(23, 20)
+
+[node name="droide_final3" parent="." unique_id=1944787601 instance=ExtResource("3_krssi")]
+position = Vector2(1255, 696)
+
+[node name="droide_final4" parent="." unique_id=702235368 instance=ExtResource("3_krssi")]
+position = Vector2(1254, 26)

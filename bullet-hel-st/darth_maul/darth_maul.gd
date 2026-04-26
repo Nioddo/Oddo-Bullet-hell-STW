@@ -5,43 +5,66 @@ var _vida:int = 150
 var _velocidad_giro:float = 2.0
 var _atacando_con_giro:bool = true
 		
+signal vida_cambiada(nueva_vida)
+var _pelea_iniciada:bool = false 
+	
 var _escena_espada_voladora = preload("res://espada_bala/espada_bala.tscn")
+			
+func _ready():	
+	$PivoteEspada.hide()	
+	$PivoteEspada/EspadaHitbox/CollisionShape2D.set_deferred("disabled", true)
 				
-func _process(delta):		
-	if _atacando_con_giro == true:	
-		$PivoteEspada.rotation += _velocidad_giro * delta	
+	await get_tree().create_timer(2.5).timeout	
 					
+	_pelea_iniciada = true	
+	$PivoteEspada.show()	
+	$PivoteEspada/EspadaHitbox/CollisionShape2D.set_deferred("disabled", false)	
+				
+func _process(delta):
+						
+	if _pelea_iniciada == true and _atacando_con_giro == true:
+		$PivoteEspada.rotation += _velocidad_giro * delta
+			
 func _on_timer_timeout():	
+			
+	if _pelea_iniciada == false:	
+		return		
+				
+	if _atacando_con_giro == true:	
 					
-	if _atacando_con_giro == true:
-		_atacando_con_giro = false
-					
-		$PivoteEspada.hide() 
+		_atacando_con_giro = false	
+				
+		$PivoteEspada.hide() 		
 		$PivoteEspada/EspadaHitbox/CollisionShape2D.set_deferred("disabled", true) 	
-					
-		var jugador = get_parent().get_node_or_null("jugador_final")	
+						
+		var jugador = get_parent().get_node_or_null("jugador_final")
+		
 		if jugador != null:			
-			var nueva_espada = _escena_espada_voladora.instantiate()
-			nueva_espada.global_position = global_position
-			nueva_espada.direccion = (jugador.global_position - global_position).normalized()
+			for i in range(3):	
+						
+				var nueva_espada = _escena_espada_voladora.instantiate()	
+				nueva_espada.global_position = global_position	
 							
-			get_parent().add_child(nueva_espada)		
+				nueva_espada.direccion = (jugador.global_position - global_position).normalized()
+				get_parent().add_child(nueva_espada)		
+							
+				await get_tree().create_timer(0.4).timeout
 					
 	else:			
 		_atacando_con_giro = true
+						
+		$PivoteEspada.show()			
+		$PivoteEspada/EspadaHitbox/CollisionShape2D.set_deferred("disabled", false)		
+	
+		$PivoteEspada.rotation = 0
 					
-		$PivoteEspada.show()	
-		$PivoteEspada/EspadaHitbox/CollisionShape2D.set_deferred("disabled", false)	
-				
-		$PivoteEspada.rotation = 0		
-				
 func _on_espada_hitbox_body_entered(body):
 	if body is JugadorFinal:
 		if body.has_method("_recibir_danio"):
 			body._recibir_danio(10) 
-				
+					
 func _recibir_danio(cantidad:int):
 	_vida -= cantidad
+	vida_cambiada.emit(_vida)
 	if _vida <= 0:
 		queue_free()
-			

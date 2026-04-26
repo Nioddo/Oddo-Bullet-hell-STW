@@ -5,6 +5,7 @@ var _velocidad:float = 450.0
 var _vida:int = 10
 var _escena_laser = preload("res://laser_jugador_final/laser_jugador_final.tscn")
 var _puede_disparar:bool = true
+signal vida_cambiada(nueva_vida)
 		
 func _physics_process(_delta):
 				
@@ -32,5 +33,7 @@ func _disparar():
 					
 func _recibir_danio(cant):
 	_vida -= cant
+	vida_cambiada.emit(_vida)
+	print("Vida restante: ", _vida) 		
 	if _vida <= 0:
 		get_tree().change_scene_to_file("res://game_over/game_over.tscn")

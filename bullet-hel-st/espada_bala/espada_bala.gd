@@ -1,7 +1,7 @@
 extends Area2D
 class_name EspadaArrojada
 	
-var _velocidad:float = 600.0
+var _velocidad:float = 900.0
 var direccion:Vector2 = Vector2.ZERO
 	
 func _process(delta):
@@ -15,6 +15,6 @@ func _process(delta):
 func _on_body_entered(body):
 	if body is JugadorFinal:	
 		if body.has_method("_recibir_danio"):
-			body._recibir_danio(10) 	
+			body._recibir_danio(3) 	
 			queue_free()	
 		

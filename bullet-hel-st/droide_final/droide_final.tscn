@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://do4nhsnd7cu8c"]
+
+[ext_resource type="Script" uid="uid://ds4bwcewew6hf" path="res://droide_final/droide_final.gd" id="1_liico"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_liico"]
+
+[node name="droide_final" type="Area2D" unique_id=1131614568]
+script = ExtResource("1_liico")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1587032277]
+offset_left = -10.0
+offset_top = -10.0
+offset_right = 10.0
+offset_bottom = 10.0
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1946578479]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2133848762]
+shape = SubResource("RectangleShape2D_liico")
+
+[node name="Timer" type="Timer" parent="." unique_id=1750961715]
+wait_time = 2.0
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
