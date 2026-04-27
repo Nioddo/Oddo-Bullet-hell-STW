@@ -11,5 +11,16 @@
 - https://www.youtube.com/watch?v=CNOAQUdPd_o
 - https://www.youtube.com/watch?v=vVmIYijtikg
 - https://www.youtube.com/watch?v=xWKHxTHvzTI
+- https://docs.godotengine.org/es/4.x/tutorials/2d/2d_transforms.html
+- https://docs.godotengine.org/es/4.x/tutorials/scripting/nodes_and_scene_instances.html
+- https://docs.godotengine.org/es/4.x/getting_started/step_by_step/signals.html
+- https://docs.godotengine.org/es/4.x/tutorials/2d/2d_movement.html
+- https://docs.godotengine.org/es/4.x/classes/class_node2d.html
+- https://docs.godotengine.org/es/4.x/tutorials/inputs/mouse_and_input_coordinates.html
+- https://docs.godotengine.org/es/4.x/classes/class_camera2d.html
 # **ASSETS**: 
-https://opengameart.org/content/3-lasers
+- https://opengameart.org/content/3-lasers
+- https://space-spheremaps.itch.io/pixelart-starfields
+- https://gisha.itch.io/spaceships-asset-pack
+- https://maxime-nourry.itch.io/64px-robot-pack
+- https://marinesosa.itch.io/mech-assets
