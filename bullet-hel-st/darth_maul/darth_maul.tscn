@@ -4,7 +4,7 @@
 [ext_resource type="Script" uid="uid://bd2ca45s1o3yr" path="res://darth_maul/darth_maul.gd" id="1_mdela"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_okta6"]
-size = Vector2(889, 25.999992)
+size = Vector2(964, 25.66666)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mdela"]
 size = Vector2(14, 28)
@@ -22,7 +22,7 @@ scale = Vector2(2.4513063, 0.07236843)
 texture = ExtResource("1_7jetw")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PivoteEspada/EspadaHitbox" unique_id=678030921]
-position = Vector2(0, -2.3841858e-07)
+position = Vector2(-1, -0.013158049)
 scale = Vector2(1, 0.078947395)
 shape = SubResource("RectangleShape2D_okta6")
 

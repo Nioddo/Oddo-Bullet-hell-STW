@@ -11,10 +11,11 @@ func _process(delta):
 		queue_free()		
 			
 func _on_body_entered(body):	
-	if body is Jugador:	
+			
+	if body is Jugador or body is JugadorFinal:	
 		if body.has_method("_recibir_danio"):			
 			body._recibir_danio(1)
-			queue_free()	
+			queue_free()
 	
 		
 				

@@ -19,6 +19,7 @@ offset_bottom = 10.0
 shape = SubResource("RectangleShape2D_liico")
 
 [node name="Timer" type="Timer" parent="." unique_id=1750961715]
-wait_time = 2.0
+wait_time = 3.5
+autostart = true
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

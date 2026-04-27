@@ -62,6 +62,7 @@ layout_mode = 2
 color = Color(1, 0.06666667, 0.1764706, 1)
 
 [node name="ColorRect3" type="ColorRect" parent="paredes/vida" unique_id=517592382]
+visible = false
 custom_minimum_size = Vector2(10, 10)
 layout_mode = 2
 color = Color(1, 0.06666667, 0.1764706, 1)

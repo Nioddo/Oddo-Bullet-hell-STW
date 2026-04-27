@@ -3,6 +3,8 @@
 [ext_resource type="PackedScene" uid="uid://bftis6y17xqxm" path="res://darth_maul/darth_maul.tscn" id="2_qq4us"]
 [ext_resource type="PackedScene" uid="uid://dd5yr3fgd1ap5" path="res://jugador_final/jugador_final.tscn" id="3_gw7ke"]
 [ext_resource type="PackedScene" uid="uid://do4nhsnd7cu8c" path="res://droide_final/droide_final.tscn" id="3_krssi"]
+[ext_resource type="Script" uid="uid://ngyfp0t0ich8" path="res://nivel/vida.gd" id="4_krssi"]
+[ext_resource type="Script" uid="uid://bbnwir6uvqbc3" path="res://nivel_final/progress_bar.gd" id="5_4bhlm"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1lbhm"]
 size = Vector2(3, 720)
@@ -80,4 +82,77 @@ position = Vector2(23, 20)
 position = Vector2(1255, 696)
 
 [node name="droide_final4" parent="." unique_id=702235368 instance=ExtResource("3_krssi")]
-position = Vector2(1254, 26)
+position = Vector2(1261, 18)
+
+[node name="interfaz" type="CanvasLayer" parent="." unique_id=1138464652]
+
+[node name="vida" type="HBoxContainer" parent="interfaz" unique_id=623993382]
+offset_left = 103.0
+offset_top = 14.0
+offset_right = 183.0
+offset_bottom = 54.0
+script = ExtResource("4_krssi")
+
+[node name="ColorRect" type="ColorRect" parent="interfaz/vida" unique_id=860574232]
+custom_minimum_size = Vector2(10, 10)
+layout_mode = 2
+color = Color(1, 0.06666667, 0.1764706, 1)
+
+[node name="ColorRect2" type="ColorRect" parent="interfaz/vida" unique_id=2102375728]
+custom_minimum_size = Vector2(10, 10)
+layout_mode = 2
+color = Color(1, 0.06666667, 0.1764706, 1)
+
+[node name="ColorRect3" type="ColorRect" parent="interfaz/vida" unique_id=1329792526]
+custom_minimum_size = Vector2(10, 10)
+layout_mode = 2
+color = Color(1, 0.06666667, 0.1764706, 1)
+
+[node name="ColorRect4" type="ColorRect" parent="interfaz/vida" unique_id=1128912951]
+custom_minimum_size = Vector2(10, 10)
+layout_mode = 2
+color = Color(1, 0.06666667, 0.1764706, 1)
+
+[node name="ColorRect5" type="ColorRect" parent="interfaz/vida" unique_id=1207999978]
+custom_minimum_size = Vector2(10, 10)
+layout_mode = 2
+color = Color(1, 0.06666667, 0.1764706, 1)
+
+[node name="ColorRect6" type="ColorRect" parent="interfaz/vida" unique_id=1073521533]
+custom_minimum_size = Vector2(10, 10)
+layout_mode = 2
+color = Color(1, 0.06666667, 0.1764706, 1)
+
+[node name="ColorRect7" type="ColorRect" parent="interfaz/vida" unique_id=1294153678]
+custom_minimum_size = Vector2(10, 10)
+layout_mode = 2
+color = Color(1, 0.06666667, 0.1764706, 1)
+
+[node name="ColorRect8" type="ColorRect" parent="interfaz/vida" unique_id=1172332524]
+custom_minimum_size = Vector2(10, 10)
+layout_mode = 2
+color = Color(1, 0.06666667, 0.1764706, 1)
+
+[node name="ColorRect9" type="ColorRect" parent="interfaz/vida" unique_id=2146146994]
+custom_minimum_size = Vector2(10, 10)
+layout_mode = 2
+color = Color(1, 0.06666667, 0.1764706, 1)
+
+[node name="ColorRect10" type="ColorRect" parent="interfaz/vida" unique_id=1990110258]
+custom_minimum_size = Vector2(10, 10)
+layout_mode = 2
+color = Color(1, 0.06666667, 0.1764706, 1)
+
+[node name="ProgressBar" type="ProgressBar" parent="interfaz" unique_id=1905787990]
+anchors_preset = -1
+anchor_bottom = 0.037
+offset_left = 964.0
+offset_top = 15.0
+offset_right = 1152.0
+offset_bottom = 15.360001
+max_value = 150.0
+value = 150.0
+script = ExtResource("5_4bhlm")
+
+[connection signal="vida_cambiada" from="jugador_final" to="interfaz/vida" method="actualizar_corazones"]
+[connection signal="vida_cambiada" from="darth_maul" to="interfaz/ProgressBar" method="actualizar_vida_jefe"]

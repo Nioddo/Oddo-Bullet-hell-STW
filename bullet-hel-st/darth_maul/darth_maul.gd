@@ -2,7 +2,7 @@ extends Area2D
 class_name DarthMaul
 		
 var _vida:int = 150
-var _velocidad_giro:float = 2.0
+var _velocidad_giro:float = 1.0
 var _atacando_con_giro:bool = true
 		
 signal vida_cambiada(nueva_vida)

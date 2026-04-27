@@ -1,7 +1,7 @@
 extends Area2D
 class_name Droide
 	
-var _vida:int = 15 	
+var _vida:int = 8 	
 var _escena_laser = preload("res://laser_tropa/laser_tropa.tscn")
 	
 func _on_timer_timeout():

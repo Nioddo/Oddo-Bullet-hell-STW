@@ -1,11 +1,11 @@
 extends Area2D
 class_name Nodriza
-
+	
 var vida = 1
 var velocidad = 200
 var posicion_destino = Vector2()
 var en_posicion = false
-
+		
 var escena_misil = preload("res://disparoguiado/disparoguido.tscn")
 signal destruida
 		
