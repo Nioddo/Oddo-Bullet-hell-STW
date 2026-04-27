@@ -1,7 +1,7 @@
 extends Area2D
 class_name Droide
 	
-var _vida:int = 8 	
+var _vida:int = 30 	
 var _escena_laser = preload("res://laser_tropa/laser_tropa.tscn")
 @onready var animacion = $Sprite2D
 			

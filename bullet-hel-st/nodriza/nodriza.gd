@@ -1,7 +1,7 @@
 extends Area2D
 class_name Nodriza
 	
-var vida = 30
+var vida = 50
 var velocidad = 200
 var posicion_destino = Vector2()
 var en_posicion = false
