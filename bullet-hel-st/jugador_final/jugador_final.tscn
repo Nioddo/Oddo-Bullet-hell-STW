@@ -110,14 +110,14 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7iuhm"]
-size = Vector2(12, 24)
+size = Vector2(20, 42.96875)
 
 [node name="jugador_final" type="CharacterBody2D" unique_id=1764430916]
 script = ExtResource("1_7iuhm")
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="." unique_id=1165255766]
-position = Vector2(0, -1.2499998)
-scale = Vector2(0.453125, 0.4609375)
+position = Vector2(0.7499994, -4.2500005)
+scale = Vector2(0.75781256, 0.99218744)
 sprite_frames = SubResource("SpriteFrames_j61ga")
 frame_progress = 0.61186135
 
@@ -129,18 +129,18 @@ shape = SubResource("RectangleShape2D_7iuhm")
 [node name="pistola" type="Node2D" parent="." unique_id=1490497559]
 
 [node name="ColorRect" type="ColorRect" parent="pistola" unique_id=222331504]
-offset_left = 15.0
+offset_left = 29.0
 offset_top = -1.0
-offset_right = 22.0
+offset_right = 36.0
 offset_bottom = 1.0
 color = Color(0, 0, 0, 1)
 
 [node name="ColorRect2" type="ColorRect" parent="pistola" unique_id=1237689927]
-offset_left = 15.0
+offset_left = 29.0
 offset_top = -1.0
-offset_right = 17.0
+offset_right = 31.0
 offset_bottom = 4.0
 color = Color(0, 0, 0, 1)
 
 [node name="PuntaArma" type="Marker2D" parent="pistola" unique_id=1857851006]
-position = Vector2(22, 0)
+position = Vector2(36, 0)
