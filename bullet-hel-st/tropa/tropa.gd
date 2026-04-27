@@ -7,7 +7,12 @@ var posicion_destino:Vector2
 var _en_posicion:bool = false
 				
 var _escena_laser = preload("res://laser_tropa/laser_tropa.tscn")
+@onready var animacion = $Sprite2D/propulsor
+
 signal destruida		
+			
+func _ready() -> void:
+	animacion.play("default")
 			
 func _process(delta):	
 	if _en_posicion == false:	
@@ -37,7 +42,10 @@ func _on_timer_timeout():
 										
 			await get_tree().create_timer(0.10).timeout		
 						
-func _recibir_danio(cantidad:int):	
+func _recibir_danio(cantidad:int):
+	if _en_posicion == false:
+		return 	
+				
 	_vida -= cantidad		
 	if _vida <= 0:		
 		destruida.emit() 	

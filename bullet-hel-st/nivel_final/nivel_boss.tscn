@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://cxu2v5gyvnv31"]
 
+[ext_resource type="Texture2D" uid="uid://xd4i7g52pl0m" path="res://assets/floor_futuristic.png" id="1_7w3nj"]
 [ext_resource type="PackedScene" uid="uid://bftis6y17xqxm" path="res://darth_maul/darth_maul.tscn" id="2_qq4us"]
 [ext_resource type="PackedScene" uid="uid://dd5yr3fgd1ap5" path="res://jugador_final/jugador_final.tscn" id="3_gw7ke"]
 [ext_resource type="PackedScene" uid="uid://do4nhsnd7cu8c" path="res://droide_final/droide_final.tscn" id="3_krssi"]
@@ -20,8 +21,13 @@ size = Vector2(1280, 3)
 
 [node name="nivel_boss" type="Node2D" unique_id=1413205141]
 
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1565818316]
+position = Vector2(640, 360.00003)
+scale = Vector2(0.21333334, 0.21333332)
+texture = ExtResource("1_7w3nj")
+
 [node name="jugador_final" parent="." unique_id=1764430916 instance=ExtResource("3_gw7ke")]
-position = Vector2(1118, 358)
+position = Vector2(1199, 362)
 
 [node name="paredIzq" type="StaticBody2D" parent="." unique_id=935264638]
 
@@ -70,19 +76,19 @@ position = Vector2(640, 718.5)
 shape = SubResource("RectangleShape2D_krssi")
 
 [node name="darth_maul" parent="." unique_id=1034064996 instance=ExtResource("2_qq4us")]
-position = Vector2(591, 317)
+position = Vector2(640, 360)
 
 [node name="droide_final" parent="." unique_id=1131614568 instance=ExtResource("3_krssi")]
-position = Vector2(31, 691)
+position = Vector2(34, 684)
 
 [node name="droide_final2" parent="." unique_id=2123282686 instance=ExtResource("3_krssi")]
-position = Vector2(23, 20)
+position = Vector2(34, 39)
 
 [node name="droide_final3" parent="." unique_id=1944787601 instance=ExtResource("3_krssi")]
-position = Vector2(1255, 696)
+position = Vector2(1239, 681)
 
 [node name="droide_final4" parent="." unique_id=702235368 instance=ExtResource("3_krssi")]
-position = Vector2(1261, 18)
+position = Vector2(1246, 39)
 
 [node name="interfaz" type="CanvasLayer" parent="." unique_id=1138464652]
 
@@ -150,8 +156,8 @@ offset_left = 964.0
 offset_top = 15.0
 offset_right = 1152.0
 offset_bottom = 15.360001
-max_value = 150.0
-value = 150.0
+max_value = 50.0
+value = 50.0
 script = ExtResource("5_4bhlm")
 
 [connection signal="vida_cambiada" from="jugador_final" to="interfaz/vida" method="actualizar_corazones"]

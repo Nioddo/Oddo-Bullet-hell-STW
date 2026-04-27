@@ -1,7 +1,7 @@
 extends Area2D
 class_name DarthMaul
 		
-var _vida:int = 150
+var _vida:int = 50
 var _velocidad_giro:float = 1.0
 var _atacando_con_giro:bool = true
 		
@@ -10,12 +10,18 @@ var _pelea_iniciada:bool = false
 	
 var _escena_espada_voladora = preload("res://espada_bala/espada_bala.tscn")
 			
-func _ready():	
+@onready var animacion = $AnimatedSprite2D
+			
+func _ready():
+	animacion.play("default")
+	
 	$PivoteEspada.hide()	
 	$PivoteEspada/EspadaHitbox/CollisionShape2D.set_deferred("disabled", true)
 				
 	await get_tree().create_timer(2.5).timeout	
 					
+
+		
 	_pelea_iniciada = true	
 	$PivoteEspada.show()	
 	$PivoteEspada/EspadaHitbox/CollisionShape2D.set_deferred("disabled", false)	
@@ -65,6 +71,10 @@ func _on_espada_hitbox_body_entered(body):
 					
 func _recibir_danio(cantidad:int):
 	_vida -= cantidad
+			
 	vida_cambiada.emit(_vida)
-	if _vida <= 0:
+	if _vida <= 0:		
+		get_tree().change_scene_to_file("res://victoria_menu/victoria.tscn")		
 		queue_free()
+			
+		

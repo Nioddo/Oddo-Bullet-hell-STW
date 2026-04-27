@@ -7,6 +7,11 @@ var _escena_laser = preload("res://laser_jugador_final/laser_jugador_final.tscn"
 var _puede_disparar:bool = true
 signal vida_cambiada(nueva_vida)
 		
+@onready var animacion = $Sprite2D
+		
+			
+func _ready() -> void:
+	animacion.play("default")
 func _physics_process(_delta):
 				
 	var input_dir = Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")

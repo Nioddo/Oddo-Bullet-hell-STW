@@ -1,6 +1,113 @@
 [gd_scene format=3 uid="uid://dd5yr3fgd1ap5"]
 
 [ext_resource type="Script" uid="uid://r4axqfsvgo3k" path="res://jugador_final/jugador_final.gd" id="1_7iuhm"]
+[ext_resource type="Texture2D" uid="uid://dmfbkmm0snvdy" path="res://assets/64px_robot_pack/Character/character-Sheet.png" id="2_6ch31"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hxku6"]
+atlas = ExtResource("2_6ch31")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qmye1"]
+atlas = ExtResource("2_6ch31")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ikcmd"]
+atlas = ExtResource("2_6ch31")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tqp4x"]
+atlas = ExtResource("2_6ch31")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kuny1"]
+atlas = ExtResource("2_6ch31")
+region = Rect2(256, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fi01b"]
+atlas = ExtResource("2_6ch31")
+region = Rect2(320, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2v0yd"]
+atlas = ExtResource("2_6ch31")
+region = Rect2(384, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b5q33"]
+atlas = ExtResource("2_6ch31")
+region = Rect2(448, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uii8c"]
+atlas = ExtResource("2_6ch31")
+region = Rect2(512, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5v1rf"]
+atlas = ExtResource("2_6ch31")
+region = Rect2(576, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lvp82"]
+atlas = ExtResource("2_6ch31")
+region = Rect2(640, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8twyh"]
+atlas = ExtResource("2_6ch31")
+region = Rect2(704, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r5wtp"]
+atlas = ExtResource("2_6ch31")
+region = Rect2(768, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1jw63"]
+atlas = ExtResource("2_6ch31")
+region = Rect2(832, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_j61ga"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hxku6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qmye1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ikcmd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tqp4x")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kuny1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fi01b")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2v0yd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b5q33")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uii8c")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5v1rf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lvp82")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8twyh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r5wtp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1jw63")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7iuhm"]
 size = Vector2(12, 24)
@@ -8,13 +115,11 @@ size = Vector2(12, 24)
 [node name="jugador_final" type="CharacterBody2D" unique_id=1764430916]
 script = ExtResource("1_7iuhm")
 
-[node name="ColorRect" type="ColorRect" parent="." unique_id=2075997471]
-offset_left = -6.0
-offset_top = -12.0
-offset_right = 6.0
-offset_bottom = 12.0
-
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=146608901]
+[node name="Sprite2D" type="AnimatedSprite2D" parent="." unique_id=1165255766]
+position = Vector2(0, -1.2499998)
+scale = Vector2(0.453125, 0.4609375)
+sprite_frames = SubResource("SpriteFrames_j61ga")
+frame_progress = 0.61186135
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=589787425]
 shape = SubResource("RectangleShape2D_7iuhm")
@@ -23,13 +128,19 @@ shape = SubResource("RectangleShape2D_7iuhm")
 
 [node name="pistola" type="Node2D" parent="." unique_id=1490497559]
 
-[node name="Sprite2D" type="Sprite2D" parent="pistola" unique_id=529909111]
-
 [node name="ColorRect" type="ColorRect" parent="pistola" unique_id=222331504]
 offset_left = 15.0
 offset_top = -1.0
 offset_right = 22.0
 offset_bottom = 1.0
+color = Color(0, 0, 0, 1)
+
+[node name="ColorRect2" type="ColorRect" parent="pistola" unique_id=1237689927]
+offset_left = 15.0
+offset_top = -1.0
+offset_right = 17.0
+offset_bottom = 4.0
+color = Color(0, 0, 0, 1)
 
 [node name="PuntaArma" type="Marker2D" parent="pistola" unique_id=1857851006]
 position = Vector2(22, 0)

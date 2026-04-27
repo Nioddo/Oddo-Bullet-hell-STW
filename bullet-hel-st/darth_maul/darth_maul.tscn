@@ -2,12 +2,63 @@
 
 [ext_resource type="Texture2D" uid="uid://ugru5lu01s4u" path="res://assets/red_laser.png" id="1_7jetw"]
 [ext_resource type="Script" uid="uid://bd2ca45s1o3yr" path="res://darth_maul/darth_maul.gd" id="1_mdela"]
+[ext_resource type="Texture2D" uid="uid://bjsvulfqjknhl" path="res://assets/64px_robot_pack/npc1/npc1-idle-Sheet.png" id="3_okta6"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_okta6"]
 size = Vector2(964, 25.66666)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_yaxp5"]
+atlas = ExtResource("3_okta6")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_drmbr"]
+atlas = ExtResource("3_okta6")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7wcn2"]
+atlas = ExtResource("3_okta6")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_to6y6"]
+atlas = ExtResource("3_okta6")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bhocp"]
+atlas = ExtResource("3_okta6")
+region = Rect2(256, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_26clg"]
+atlas = ExtResource("3_okta6")
+region = Rect2(320, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_dbtjq"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yaxp5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_drmbr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7wcn2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_to6y6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bhocp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_26clg")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mdela"]
-size = Vector2(14, 28)
+size = Vector2(32, 48)
 
 [node name="darth_maul" type="Area2D" unique_id=1034064996]
 script = ExtResource("1_mdela")
@@ -26,18 +77,19 @@ position = Vector2(-1, -0.013158049)
 scale = Vector2(1, 0.078947395)
 shape = SubResource("RectangleShape2D_okta6")
 
-[node name="ColorRect" type="ColorRect" parent="." unique_id=1410515256]
-offset_left = -7.0
-offset_top = -14.0
-offset_right = 7.0
-offset_bottom = 14.0
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=810157405]
-shape = SubResource("RectangleShape2D_mdela")
-
 [node name="Timer" type="Timer" parent="." unique_id=1841420049]
 wait_time = 4.0
 autostart = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1197025136]
+position = Vector2(0, -1.9073486e-06)
+scale = Vector2(0.9003906, 0.91796875)
+sprite_frames = SubResource("SpriteFrames_dbtjq")
+frame_progress = 0.44221723
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=810157405]
+position = Vector2(1, 5)
+shape = SubResource("RectangleShape2D_mdela")
 
 [connection signal="body_entered" from="PivoteEspada/EspadaHitbox" to="." method="_on_espada_hitbox_body_entered"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

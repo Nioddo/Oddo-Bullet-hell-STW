@@ -3,6 +3,10 @@ class_name Droide
 	
 var _vida:int = 8 	
 var _escena_laser = preload("res://laser_tropa/laser_tropa.tscn")
+@onready var animacion = $Sprite2D
+			
+func _ready():
+	animacion.play("default")
 	
 func _on_timer_timeout():
 		

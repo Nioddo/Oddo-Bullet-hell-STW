@@ -1,23 +1,44 @@
 [gd_scene format=3 uid="uid://buji5rh67oqm4"]
 
 [ext_resource type="Script" uid="uid://dhsuywsibaki4" path="res://tropa/tropa.gd" id="1_m4lg5"]
+[ext_resource type="Texture2D" uid="uid://cxgwqdhacjc4t" path="res://assets/Spaceships/03/Spaceship_03_RED.png" id="2_3giou"]
+[ext_resource type="Texture2D" uid="uid://dor8qymsp0l1q" path="res://assets/Spaceships/03/Flame_01.png" id="3_yq6jh"]
+[ext_resource type="Texture2D" uid="uid://41es1n6r1f0y" path="res://assets/Spaceships/03/Flame_02.png" id="4_u5x0n"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_m4lg5"]
 size = Vector2(40, 40)
 
+[sub_resource type="SpriteFrames" id="SpriteFrames_i2g8q"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_yq6jh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_u5x0n")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
 [node name="tropa" type="Area2D" unique_id=1933184902]
 script = ExtResource("1_m4lg5")
-
-[node name="ColorRect" type="ColorRect" parent="." unique_id=529052813]
-offset_left = -20.0
-offset_top = -20.0
-offset_right = 20.0
-offset_bottom = 20.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1336294867]
 shape = SubResource("RectangleShape2D_m4lg5")
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=2037309633]
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1937079407]
+position = Vector2(-9.536743e-07, -0.50000066)
+rotation = -1.5707964
+scale = Vector2(0.18625002, 0.158)
+texture = ExtResource("2_3giou")
+
+[node name="propulsor" type="AnimatedSprite2D" parent="Sprite2D" unique_id=1169876483]
+position = Vector2(-2.684555, 177.21518)
+scale = Vector2(1.4546441, 1.3586246)
+sprite_frames = SubResource("SpriteFrames_i2g8q")
+frame_progress = 0.8618664
 
 [node name="Timer" type="Timer" parent="." unique_id=1450339140]
 wait_time = 1.5

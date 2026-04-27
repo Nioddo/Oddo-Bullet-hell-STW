@@ -111,9 +111,13 @@ func _gestionar_fase_tres():
 	_rotacion_espiral += 0.25		
 			
 	_tiempo_sobrevivido += 1		
-	if _tiempo_sobrevivido >= 300:		
+	if _tiempo_sobrevivido == 300:
+		$Timer.stop() 
+		await get_tree().create_timer(3.0).timeout 
 		get_tree().change_scene_to_file("res://nivel_final/nivel_boss.tscn")
 					
+					
+		
 func _crear_nave_inmortal_central():	
 	var nueva_inmortal = _escena_nave_inmortal.instantiate()	
 					

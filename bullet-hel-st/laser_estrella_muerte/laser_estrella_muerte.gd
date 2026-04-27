@@ -13,7 +13,7 @@ func _process(delta):
 func _on_body_entered(body):
 	if body is Jugador:			
 		if body.has_method("_recibir_danio"):	
-			body._recibir_danio(0)			
+			body._recibir_danio(3)			
 			queue_free()	
 					
 			

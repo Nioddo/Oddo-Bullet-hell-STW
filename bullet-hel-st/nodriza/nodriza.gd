@@ -1,13 +1,21 @@
 extends Area2D
 class_name Nodriza
 	
-var vida = 1
+var vida = 30
 var velocidad = 200
 var posicion_destino = Vector2()
 var en_posicion = false
 		
 var escena_misil = preload("res://disparoguiado/disparoguido.tscn")
 signal destruida
+		
+@onready var animacion = $Sprite2D/AnimatedSprite2D
+@onready var animacion1 = $Sprite2D/AnimatedSprite2D2
+			
+func _ready() -> void:
+	animacion.play("default")
+	animacion1.play("default")
+
 		
 func _process(delta):		
 	if en_posicion == false:			
@@ -28,8 +36,14 @@ func _on_timer_timeout():
 	get_parent().add_child(nuevo_misil)	
 							
 func _recibir_danio(cantidad):
+	if en_posicion == false:
+		return
+		
 	vida -= cantidad		
 	if vida <= 0:		
 		destruida.emit()		
 		get_tree().call_group("misiles_nodriza", "queue_free")
-		queue_free()		
+		queue_free()
+					
+						
+				

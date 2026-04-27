@@ -8,6 +8,10 @@ var _en_posicion:bool = false
 	
 var _escena_laser = preload("res://laser_tropa/laser_tropa.tscn")
 		
+@onready var animacion = $Sprite2D/AnimatedSprite2D
+			
+func _ready() -> void:
+	animacion.play("default")
 func _process(delta):
 	if _en_posicion == false:
 		var distancia = global_position.distance_to(posicion_destino)

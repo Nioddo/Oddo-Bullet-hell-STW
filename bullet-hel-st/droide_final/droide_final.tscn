@@ -1,21 +1,119 @@
 [gd_scene format=3 uid="uid://do4nhsnd7cu8c"]
 
 [ext_resource type="Script" uid="uid://ds4bwcewew6hf" path="res://droide_final/droide_final.gd" id="1_liico"]
+[ext_resource type="Texture2D" uid="uid://bcnqjd54ddfjj" path="res://assets/Mechs Assets Pack - Free/SpriteSheets/Red_1/Sprite_Sheets/R1_Idle.png" id="2_p3bw4"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_urch3"]
+atlas = ExtResource("2_p3bw4")
+region = Rect2(0, 0, 80, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8dqnh"]
+atlas = ExtResource("2_p3bw4")
+region = Rect2(80, 0, 80, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x8fwg"]
+atlas = ExtResource("2_p3bw4")
+region = Rect2(160, 0, 80, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pw2th"]
+atlas = ExtResource("2_p3bw4")
+region = Rect2(240, 0, 80, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3npfh"]
+atlas = ExtResource("2_p3bw4")
+region = Rect2(320, 0, 80, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1vuhc"]
+atlas = ExtResource("2_p3bw4")
+region = Rect2(400, 0, 80, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kgyka"]
+atlas = ExtResource("2_p3bw4")
+region = Rect2(480, 0, 80, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ye6fd"]
+atlas = ExtResource("2_p3bw4")
+region = Rect2(560, 0, 80, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hns1j"]
+atlas = ExtResource("2_p3bw4")
+region = Rect2(640, 0, 80, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_20wki"]
+atlas = ExtResource("2_p3bw4")
+region = Rect2(720, 0, 80, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mr2ma"]
+atlas = ExtResource("2_p3bw4")
+region = Rect2(800, 0, 80, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kcrao"]
+atlas = ExtResource("2_p3bw4")
+region = Rect2(880, 0, 80, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m5io3"]
+atlas = ExtResource("2_p3bw4")
+region = Rect2(960, 0, 80, 80)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_qtpjo"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_urch3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8dqnh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x8fwg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pw2th")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3npfh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1vuhc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kgyka")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ye6fd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hns1j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_20wki")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mr2ma")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kcrao")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m5io3")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_liico"]
+size = Vector2(47, 52)
 
 [node name="droide_final" type="Area2D" unique_id=1131614568]
 script = ExtResource("1_liico")
 
-[node name="ColorRect" type="ColorRect" parent="." unique_id=1587032277]
-offset_left = -10.0
-offset_top = -10.0
-offset_right = 10.0
-offset_bottom = 10.0
-
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1946578479]
+[node name="Sprite2D" type="AnimatedSprite2D" parent="." unique_id=20562590]
+sprite_frames = SubResource("SpriteFrames_qtpjo")
+frame_progress = 0.509592
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2133848762]
+position = Vector2(0.5, -2)
 shape = SubResource("RectangleShape2D_liico")
 
 [node name="Timer" type="Timer" parent="." unique_id=1750961715]

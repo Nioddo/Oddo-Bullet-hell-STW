@@ -1,25 +1,66 @@
 [gd_scene format=3 uid="uid://bawcfw2mv47j7"]
 
 [ext_resource type="Script" uid="uid://n1rr3pqqvtdm" path="res://nodriza/nodriza.gd" id="1_b2nsc"]
+[ext_resource type="Texture2D" uid="uid://d0cbraw26vylp" path="res://assets/Spaceships/04/Spaceship_04_BLUE.png" id="2_ngx7w"]
+[ext_resource type="Texture2D" uid="uid://dor8qymsp0l1q" path="res://assets/Spaceships/03/Flame_01.png" id="3_ctjb1"]
+[ext_resource type="Texture2D" uid="uid://41es1n6r1f0y" path="res://assets/Spaceships/03/Flame_02.png" id="4_rjrqi"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_yybsf"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_ctjb1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_rjrqi")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_f0s6c"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_ctjb1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_rjrqi")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pobxg"]
-size = Vector2(61, 27)
+size = Vector2(86, 42)
 
 [node name="nodriza" type="Area2D" unique_id=97487102]
 script = ExtResource("1_b2nsc")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=769864301]
-scale = Vector2(30, 30)
+rotation = -1.5707964
+scale = Vector2(0.14343564, 0.30156696)
+texture = ExtResource("2_ngx7w")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Sprite2D" unique_id=1705346925]
+position = Vector2(24.192423, 166.48811)
+scale = Vector2(1, 0.7556082)
+sprite_frames = SubResource("SpriteFrames_yybsf")
+
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="Sprite2D" unique_id=218875642]
+position = Vector2(-30.575745, 169.47186)
+scale = Vector2(1, 0.83988136)
+sprite_frames = SubResource("SpriteFrames_f0s6c")
+frame = 1
+frame_progress = 0.047754016
 
 [node name="Timer" type="Timer" parent="." unique_id=93214821]
 wait_time = 0.047
 
-[node name="ColorRect" type="ColorRect" parent="." unique_id=1575233063]
-offset_right = 61.0
-offset_bottom = 27.0
-
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1415241196]
-position = Vector2(30.5, 13.5)
+position = Vector2(-2, 0)
 shape = SubResource("RectangleShape2D_pobxg")
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
