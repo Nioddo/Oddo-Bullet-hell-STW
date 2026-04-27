@@ -9,8 +9,8 @@ var _vida:int = 6
 var _escena_laser = preload("res://laser_Disparo/laserdisparo.tscn")
 	
 func _physics_process(delta):
-	var direccion_x = Input.get_axis("ui_left", "ui_right")
-	var direccion_y = Input.get_axis("ui_up", "ui_down")	
+	var direccion_x = Input.get_axis("laA", "laD")
+	var direccion_y = Input.get_axis("laW", "laS")	
 					
 	velocity.x = direccion_x * _velocidad	
 	velocity.y = direccion_y * _velocidad		
@@ -22,10 +22,11 @@ func _physics_process(delta):
 					
 func _disparar():		
 	var laser_1 = _escena_laser.instantiate()
-	laser_1.global_position = $disparo.global_position 		
+	laser_1.global_position = $disparo.global_position
 	get_parent().add_child(laser_1)			
 					
-	var laser_2 = _escena_laser.instantiate()				
+	var laser_2 = _escena_laser.instantiate()
+	
 	laser_2.global_position = $disparo2.global_position 			
 	get_parent().add_child(laser_2)			
 							

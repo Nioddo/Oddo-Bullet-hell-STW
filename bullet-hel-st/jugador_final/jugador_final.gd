@@ -14,7 +14,7 @@ func _ready() -> void:
 	animacion.play("default")
 func _physics_process(_delta):
 				
-	var input_dir = Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
+	var input_dir = Input.get_vector("laA", "laD", "laW", "laS")
 	velocity = input_dir * _velocidad		
 	move_and_slide()	
 				

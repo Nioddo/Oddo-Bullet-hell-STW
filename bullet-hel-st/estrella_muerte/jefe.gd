@@ -88,6 +88,7 @@ func _on_enemigo_destruido():
 	_enemigos_activos -= 1		
 				
 func _gestionar_fase_tres():
+	get_tree().call_group("misiles_nodriza", "queue_free")
 	if not _inmortal_creada:
 		_crear_nave_inmortal_central()
 		_inmortal_creada = true

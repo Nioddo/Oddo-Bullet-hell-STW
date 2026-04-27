@@ -38,12 +38,9 @@ func _on_timer_timeout():
 func _recibir_danio(cantidad):
 	if en_posicion == false:
 		return
-		
 	vida -= cantidad		
 	if vida <= 0:		
 		destruida.emit()		
-		get_tree().call_group("misiles_nodriza", "queue_free")
 		queue_free()
-					
 						
 				
