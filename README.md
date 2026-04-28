@@ -28,7 +28,7 @@
 # **Análisis de dificultad y balance del juego**
 Creo que el juego quedó con una dificultad media que está bastante bien. El nivel se pone interesante a medida que vas aprendiendo las mecánicas para pasar cada nivel. Para balancear la dificultad, trabajé principalmente tocando las hitboxes del personaje y ajustando tanto la velocidad como la cadencia de disparo de los enemigos.
 
-En lo personal, me resultó divertido porque tiene bastante variación en el gameplay, lo que te lleva por distintas zonas de juego. Gracias a que mis compañeros probaron el juego, pude hacer ajustes clave: me dijeron que no era imposible pero que tampoco era fácil, así que achiqué un poco la hitbox de mi nave para que la Fase 3 sea más pasable. Por otro lado, para subir un poco el desafío y mejorar la estética, agrandé el sprite y la hitbox del mi jugador en el nivel finañ.
+En lo personal, me resultó divertido porque tiene bastante variación en el gameplay, lo que te lleva por distintas zonas de juego. Gracias a que mis compañeros probaron el juego, pude hacer ajustes clave: me dijeron que no era imposible pero que tampoco era fácil, así que achiqué un poco la hitbox de mi nave para que la Fase 3 sea más pasable. Por otro lado, para subir un poco el desafío y mejorar la estética, agrandé el sprite y la hitbox del mi jugador en el nivel final.
 
 # **Desafíos técnicos y proceso de desarrollo**
 El ajuste de los valores de las naves (vida, daño y disparos por segundo) me llevó varias iteraciones y pruebas. El punto justo lo logré alcanzar escuchando las opiniones de mis compañeros cuando testeamos el juego. A nivel técnico, tuve que lidiar con algunos bugs, especialmente uno donde las balas de fases anteriores no se borraban al cambiar de nivel y quedaban ahí molestando.
